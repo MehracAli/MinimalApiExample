@@ -10,18 +10,18 @@ namespace MinimalApiExample.Endpoints
 		{
 			var x = app.MapGroup("/products");
 			x.MapGet("/", GetCategories);
-			//x.MapPost("/", CreateCategory);
+			x.MapPost("/", CreateCategory);
 		}
 
-		//public async Task<IResult> CreateCategory(Category category, ICategoryService categoryService)
-		//{
-		//	var result = await categoryService.CreateCategory(category);
-		//	if (!result)
-		//	{
-		//		return Results.BadRequest();
-		//	}
-		//	return Results.Ok();
-		//}
+		public async Task<IResult> CreateCategory(Category category, ICategoryService categoryService)
+		{
+			var result = await categoryService.CreateCategory(category);
+			if (!result)
+			{
+				return Results.BadRequest();
+			}
+			return Results.Ok("hersey eladi");
+		}
 
 		public async Task<IResult> GetCategories(ICategoryService categoryService)
 		{

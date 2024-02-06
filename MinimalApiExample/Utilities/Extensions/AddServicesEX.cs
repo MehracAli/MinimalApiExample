@@ -6,7 +6,7 @@ namespace MinimalApiExample.Utilities.Extensions
 	{
 		public static void AddServices(this IServiceCollection services)
 		{
-			services.AddSingleton<ICategoryService, CategoryService>();
+			services.AddScoped<ICategoryService, CategoryService>();
 		}
 	}
 }

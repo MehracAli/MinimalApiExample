@@ -20,6 +20,7 @@ namespace MinimalApiExample.Services
 				return false;
 			}
 			await _context.Categories.AddAsync(category);
+			_context.SaveChanges();
 			return true;
 		}
 
